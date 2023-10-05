@@ -286,9 +286,7 @@
 							</a>
 						</li>
                         <?php endif; ?>
-						<li class="mx-4 mt-2">
-							<a href="" id="logout2" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-sign-out-alt"></i> </span>Keluar</a> 
-						</li>
+						
 					</ul>
 				</div>
 			</div>
@@ -496,35 +494,6 @@
             }
 
 			$('#logout').click(function() {
-				Swal.fire({
-                    icon: 'warning',
-                    title: 'Logout',
-                    text: "Apakah anda ingin keluar dari halaman ini, Yakin?",
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Keluar',
-                    cancelButtonText: 'Batalkan',
-                    showLoaderOnConfirm: true,
-                    reverseButtons: true,
-                    preConfirm: function() {
-                        return new Promise(function(resolve) {
-                            Swal.fire({
-                                icon: 'success',
-                                type: 'success',
-                                title: 'Berhasil!',
-                                text: 'Anda Berhasil Logout, Terimakasih...',
-                                showConfirmButton: false,
-                                timer: 300000
-                            });
-                            window.location = '<?php echo base_url('Login/logout') ?>';
-                        });
-                    },
-                    allowOutsideClick: false
-                });
-			});
-
-			$('#logout2').click(function() {
 				Swal.fire({
                     icon: 'warning',
                     title: 'Logout',
