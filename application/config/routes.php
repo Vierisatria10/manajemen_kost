@@ -68,6 +68,9 @@ $route['penghuni'] = 'PenghuniController/index';
 // Tagihan
 $route['tagihan'] = 'TagihanController/index';
 
+// Komplain
+$route['komplain'] = 'KomplainController/index';
+
 // User
 $route['user'] = 'UserController/index';
 $route['user/penghuni'] = 'UserController/penghuni';

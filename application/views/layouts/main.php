@@ -235,8 +235,8 @@
 							</a>
 						</li>
 
-                        <li class="nav-item">
-							<a href="widgets.html">
+                        <li class="nav-item <?= $this->uri->segment(1) == 'komplain' || $this->uri->segment(1) == '' ? 'active' : '' ?>">
+							<a href="<?= base_url('komplain') ?>">
 								<i class="fas fa-file"></i>
 								<p>Komplain</p>
 							</a>

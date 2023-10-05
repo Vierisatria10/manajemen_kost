@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function() {
-
+        tampilkomplain();
         $('#id_penghuni_komplain').on('change', function(e) {
             get_penghuni_komplain();
         });
@@ -13,6 +13,23 @@
             height: '50px !important'
         });
     });
+
+    function tampilkomplain() {
+            var table = $('#komplain_kost').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "order": [],
+                "destroy": true,
+                "ajax": {
+                    "url": "<?= base_url('KomplainController/get_data_komplain') ?>",
+                    "type": "POST",
+                },
+                "columnDefs": [{
+                    "targets": [ 0 ],
+                    "orderable": false,
+                }, ],
+            });
+    }
 
     function get_data_penghuni_komplain() {
         $.ajax({
