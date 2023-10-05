@@ -34,6 +34,6 @@
 <!-- <?php $this->load->view('kamar/add_modal') ?> -->
 <!-- Modal Edit -->
 <!-- <?php $this->load->view('kamar/edit_modal') ?> -->
-<!-- Modal Detail -->
-<!-- <?php $this->load->view('kamar/detail_modal') ?> -->
+<!-- Modal Cetak -->
+<?php $this->load->view('komplain/cetak_modal') ?>
 				  

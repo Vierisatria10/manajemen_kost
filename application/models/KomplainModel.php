@@ -71,4 +71,16 @@ class KomplainModel extends CI_Model{
         $this->db->join('tbl_penghuni b', 'a.id_penghuni = b.id_penghuni', 'left');
         return $this->db->count_all_results();
     }
+
+    public function get_by_id($id_komplain)
+    {
+        $this->db->select('a.*, b.*');
+        $this->db->from('tbl_komplain a');
+        // $this->db->from($this->table);
+        $this->db->join('tbl_penghuni b', 'a.id_penghuni = b.id_penghuni', 'left');
+        $this->db->where('a.id_komplain', $id_komplain);
+        $query = $this->db->get();
+ 
+        return $query->row();
+    }
 }

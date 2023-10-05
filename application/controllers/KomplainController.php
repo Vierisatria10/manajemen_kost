@@ -28,9 +28,9 @@ class KomplainController extends CI_Controller {
         foreach($list as $field) {
             // $no++;
             
-            $row[] = $field->nomor_penghuni;
+            $row[] = '<b>'.$field->nomor_penghuni.'</b>';
             $row[] = $field->nama_penghuni;
-            $row[] = $field->nomor_kamar;
+            $row[] = '<b>'.$field->nomor_kamar.'</b>';
             $row[] = $field->jenis_komplain;
             $row[] = $field->lama_keresahan;
             $row[] = $field->permasalahan;
@@ -53,5 +53,11 @@ class KomplainController extends CI_Controller {
         );
         //output dalam format JSON
         echo json_encode($output);
+    }
+
+    public function cetak_komplain($id_komplain)
+    {
+        $data = $this->komplain->get_by_id($id_komplain);
+        echo json_encode($data);
     }
 }

@@ -31,6 +31,31 @@
             });
     }
 
+    function cetak_komplain(id_komplain) 
+    {
+        // var id_komplain = $('#id_komplain').val();
+
+        $.ajax({
+            url : "<?= base_url('KomplainController/cetak_komplain') ?>/" + id_komplain,
+            type: "GET",
+            dataType: "JSON",
+            success: function(data) {
+                $('#nomor_penghuni_cetak').val(data.nomor_penghuni);
+                $('#nama_penghuni_cetak').val(data.nama_penghuni);
+                $('#nomor_kamar_cetak').val(data.nomor_kamar);
+                $('#jenis_komplain_cetak').val(data.jenis_komplain);
+                $('#lama_keresahan_cetak').val(data.lama_keresahan);
+                $('#permasalahan_cetak').val(data.permasalahan);
+                $('#cetak_komplain').modal('show');
+            }
+        });
+    }
+
+    function simpan_cetak()
+    {
+        
+    }
+
     function get_data_penghuni_komplain() {
         $.ajax({
             url: "<?= base_url('UserController/get_data_penghuni_komplain') ?>",
